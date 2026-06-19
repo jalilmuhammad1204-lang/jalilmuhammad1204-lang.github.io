@@ -3,129 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Jalil | Personal Website</title>
+    <title>LilPsychoTrade | ACADEMI</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
         }
 
         body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #ffffff;
-            color: #111111;
+            color: #000000;
             line-height: 1.6;
-            padding: 40px 20px;
         }
 
-        .container {
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid #000000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 40px;
+            min-height: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #333333;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #333333;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 0px;
+            object-fit: cover;
+            aspect-ratio: 1;
+        }
+
+        /* PORTFOLIO SECTION */
+        .portfolio {
+            padding: 80px 40px;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #000000;
+            text-align: center;
+        }
+
+        .portfolio-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .portfolio-item p {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        /* SOCIAL MEDIA SECTION */
+        .social-section {
+            padding: 80px 40px;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .social-link {
+            border: 1px solid #000000;
+            padding: 30px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .social-link a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            padding: 80px 40px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .contact-content {
             max-width: 600px;
             margin: 0 auto;
         }
 
-        header {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eeeeee;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            color: #666666;
+        .contact p {
             font-size: 1rem;
+            color: #333333;
+            margin-bottom: 30px;
         }
 
-        section {
-            margin-bottom: 35px;
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        h2 {
-            font-size: 1.1rem;
+        .contact-info div {
+            padding: 20px;
+            border: 1px solid #000000;
+        }
+
+        .contact-info h3 {
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 15px;
-            color: #444444;
-        }
-
-        p {
-            color: #333333;
-            font-size: 1rem;
             margin-bottom: 10px;
         }
 
-        .links-list {
-            list-style: none;
-        }
-
-        .links-list li {
-            margin-bottom: 10px;
-        }
-
-        .links-list a {
-            color: #111111;
+        .contact-info a {
+            color: #000000;
             text-decoration: none;
             font-weight: 500;
-            border-bottom: 1px solid #111111;
-            transition: color 0.2s, border-color 0.2s;
         }
 
-        .links-list a:hover {
-            color: #666666;
-            border-color: #666666;
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
+        /* FOOTER */
         footer {
-            margin-top: 60px;
-            font-size: 0.85rem;
-            color: #888888;
+            padding: 40px;
+            border-top: 1px solid #000000;
             text-align: center;
+            font-size: 0.85rem;
+            color: #666666;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .portfolio {
+                padding: 40px 20px;
+            }
+
+            .social-section {
+                padding: 40px 20px;
+            }
+
+            .contact {
+                padding: 40px 20px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- HEADER -->
-        <header>
-            <h1>Muhammad Jalil</h1>
-            <p class="subtitle">Kreator Konten & Spesialis Visual</p>
-        </header>
 
-        <!-- TENTANG SAYA -->
-        <section>
-            <h2>Tentang Saya</h2>
-            <p>Halo, saya Jalil. Saya fokus pada pembuatan konten digital, pengeditan visual, dan eksplorasi desain minimalis modern.</p>
-            <p>Senang bereksperimen dengan ide-ide baru untuk menghasilkan karya visual yang bersih, berkarakter, dan fungsional.</p>
-        </section>
+<!-- HEADER -->
+<header>
+    <div class="logo">LPT</div>
+    <nav>
+        <a onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">Portfolio</a>
+        <a onclick="document.getElementById('social').scrollIntoView({behavior: 'smooth'})">Social</a>
+        <a onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a>
+    </nav>
+</header>
 
-        <!-- MINAT / KEAHLIAN -->
-        <section>
-            <h2>Fokus & Minat</h2>
-            <p>• Desain Grafis & Pembuatan Logo</p>
-            <p>• Pengeditan Foto & Video Clipping</p>
-            <p>• Pengembangan Identitas Visual</p>
-        </section>
-
-        <!-- KONTAK / LINK -->
-        <section>
-            <h2>Hubungi Saya</h2>
-            <ul class="links-list">
-                <li>Email: <a href="mailto:muhammadjalil@example.com">muhammadjalil@example.com</a></li>
-                <li>Instagram: <a href="#" target="_blank">@jalil_visual</a></li>
-                <li>GitHub: <a href="#" target="_blank">github.com/jalil</a></li>
-            </ul>
-        </section>
-
-        <!-- FOOTER -->
-        <footer>
-            <p>&copy; 2026 Muhammad Jalil. Diperbarui secara berkala.</p>
-        </footer>
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>ACADEMI</h1>
+        <p>Psychologi dalam Trading Sehat</p>
+        <p>Pelajari cara mengembangkan mindset yang kuat untuk trading yang lebih konsisten dan menguntungkan.</p>
+        <a href="#contact" class="cta-button">Hubungi Saya</a>
     </div>
+    <div class="hero-image">
+        <img src="https://via.placeholder.com/400x400?text=LilPsychoTrade" alt="LilPsychoTrade Profile">
+    </div>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<section class="portfolio" id="portfolio">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <h3>Trading Psychology</h3>
+            <p>Memahami psikologi trader dan cara mengatasi emosi saat trading</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Risk Management</h3>
+            <p>Strategi manajemen risiko untuk melindungi modal dan profit</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Mental Discipline</h3>
+            <p>Membangun disiplin mental dan konsistensi dalam setiap transaksi</p>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL MEDIA SECTION -->
+<section class="social-section" id="social">
+    <h2 class="section-title">Follow Me</h2>
+    <div class="social-links">
+        <div class="social-link">
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+        <div class="social-link">
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+        <div class="social-link">
+            <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
+        <div class="social-link">
+            <a href="https://tiktok.com" target="_blank">TikTok</a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+    <div class="contact-content">
+        <h2 class="section-title">Get In Touch</h2>
+        <p>Hubungi saya untuk konsultasi, kerjasama, atau pertanyaan seputar trading psychology dan ACADEMI.</p>
+        <div class="contact-info">
+            <div>
+                <h3>Email</h3>
+                <a href="mailto:lilpsychotrade@example.com">lilpsychotrade@example.com</a>
+            </div>
+            <div>
+                <h3>Whatsapp</h3>
+                <a href="https://wa.me/62xxx" target="_blank">+62 xxx xxxx</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 LilPsychoTrade | ACADEMI. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
